@@ -1,0 +1,25 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.one{
+    background-color: rgb(230, 232, 232);
+    padding: 20px;
+}
+.two{
+    background-color: rgb(158, 236, 172);
+    width: 30%;
+    border: 2px solid black;
+    border-radius: 4px;
+    padding: 15px 5px;
+    text-align: center;
+    color: rgb(6, 6, 6);
+    font-size: 30px;
+}
+
+.button button{
+    padding: 5px 10px;
+    margin: 0 5px;
+}
