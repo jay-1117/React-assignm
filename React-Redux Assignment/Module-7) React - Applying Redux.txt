@@ -1,0 +1,31 @@
+Module-7) React - Applying Redux
+
+
+Q-1.What is Redux?
+-->Redux is a state management library primarily used with JavaScript applications, most commonly with frameworks like React. 
+-->It helps in managing the state of an application in a predictable and centralized manner. Redux follows a unidirectional data flow architecture, which means data flows in a single direction through the application.
+
+Q-2.What is Redux Thunk used for?
+-->Redux Thunk is a middleware for Redux that enables asynchronous logic to be handled within Redux actions. 
+-->In Redux, actions are typically synchronous and return plain JavaScript objects describing the action that occurred. However, in real-world applications, there are often scenarios where you need to perform asynchronous operations, such as fetching data from a server, before dispatching an action
+
+Q-3.What is Pure Component? When to use Pure Component over component?
+-->A PureComponent is a special type of React component that automatically implements the shouldComponentUpdate lifecycle method with a shallow prop and state comparison. This means that PureComponent performs a shallow comparison of the component's props and state, and only re-renders if there are differences detected in these shallow comparisons.
+
+=>When to use PureComponent over Component depends on the specific requirements of your application:
+
+1.Performance Optimization: PureComponent is particularly useful when you want to optimize the performance of your application by reducing unnecessary re-renders. If your component's render method is expensive in terms of computation or if it renders frequently, using PureComponent can help prevent unnecessary re-renders and improve performance.
+
+2.Immutable Data Structures: PureComponent works best with immutable data structures or with props and state that are deeply immutable. Since PureComponent performs a shallow comparison, it may not detect changes in nested objects or arrays if their references remain the same. Therefore, it's important to ensure that props and state are updated immutably (i.e., by creating new references) to take full advantage of PureComponent's optimization.
+
+3.Stateless Components: If your component relies solely on props and doesn't have any internal state, using a PureComponent might be a good choice. Since stateless components don't have internal state to manage, PureComponent's shallow comparison of props becomes the main consideration for optimization.
+
+=>However, there are some scenarios where PureComponent might not be suitable:
+
+1.Deeply Nested Data: If your component's props or state contain deeply nested data structures (such as deeply nested objects or arrays), PureComponent's shallow comparison may not be sufficient to detect changes effectively. In such cases, you may need to implement custom shouldComponentUpdate logic or consider using libraries like Immutable.js for managing immutable data.
+
+2.Mutating Props or State: If your component mutates its props or state directly (e.g., by modifying nested objects or arrays in place), PureComponent's shallow comparison may not accurately detect changes. It's essential to ensure that props and state are updated immutably to work effectively with PureComponent.
+
+Q-4.What is the second argument that can optionally be passed to setState and what is its purpose?
+
+-->The second argument that can optionally be passed to the setState function in React is a callback function. This callback function is invoked after the setState operation is completed and the component has been re-rendered.
